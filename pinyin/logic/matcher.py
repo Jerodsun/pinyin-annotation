@@ -10,8 +10,8 @@ def match_pinyin(ch_chars, model):
         # if i matches in database, add corresponding pinyin else null
         try:
             character = model.objects.get(character=i)
-            ls.append( (i, character) )
-        except (model.DoesNotExist):
+            ls.append( (i, character.pinyin2) )
+        except: # Model does not exist
             ls.append( (i, None) )
 
     return ls
