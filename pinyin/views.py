@@ -30,10 +30,10 @@ class UserInputView(viewsets.ModelViewSet):
     def list(self, request):
         return Response({'message':'Please post a string < 200 chars.'})
 
-    def retrieve(self, request):
+    def retrieve(self, request, pk):
         # also temporarily block id selections
         return Response({'message':'Please post a string < 200 chars.'})
-    
+
     def get_client_ip(self, request):
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
