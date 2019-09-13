@@ -11,7 +11,7 @@ class UserInputView(viewsets.ModelViewSet):
     serializer_class = UserInputSerializer
     queryset = UserInput.objects.all()
 
-    http_method_names = ['get', 'post']
+    http_method_names = ['post']
 
     def create(self, request):
         # CREATE into a seperate table, but use the QUERYSET as a reference.
