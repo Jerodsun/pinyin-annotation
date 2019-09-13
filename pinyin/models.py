@@ -6,10 +6,10 @@ from django.db import models
 
 class PinyinCodes(models.Model):
     """This should be a table that's prepopulated before deploy, and not modificable after that by POST requests in the view."""
-    character = models.CharField()
-    pinyin1 = models.CharField()
+    character = models.TextField(primary_key=True)
+    pinyin1 = models.TextField()
     number = models.IntegerField()
-    pinyin2 = models.CharField()
+    pinyin2 = models.TextField()
 
     class Meta:
         indexes = [
@@ -17,10 +17,13 @@ class PinyinCodes(models.Model):
         ]
         verbose_name_plural = "Pinyin Database Model"
 
+        # from pinyin.models import PinyinCodes
+        # A = PinyinCodes.objects.get(character="怎") 
+
 class UserInput(models.Model):
     """This field saves the user inputs."""
     created = models.DateTimeField(auto_now_add=True)
-    input_string = models.TextField(max_length=1000)
+    input_string = models.TextField(max_length=200)
     ip_address = models.CharField(max_length=15)
 
     class Meta:
