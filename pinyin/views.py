@@ -11,7 +11,7 @@ class UserInputView(viewsets.ModelViewSet):
     serializer_class = UserInputSerializer
     queryset = UserInput.objects.all()
 
-    http_method_names = ['post']
+    http_method_names = ['get', 'post']
 
     def create(self, request):
         # CREATE into a seperate table, but use the QUERYSET as a reference.
@@ -26,6 +26,13 @@ class UserInputView(viewsets.ModelViewSet):
 
         # catch errors
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def list(self, request):
+        return Response({'message':'Please post a string < 200 chars.'})
+
+    def retrieve(self, request):
+        # also temporarily block id selections
+        return Response({'message':'Please post a string < 200 chars.'})
     
     def get_client_ip(self, request):
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
