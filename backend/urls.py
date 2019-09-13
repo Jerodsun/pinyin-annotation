@@ -21,7 +21,7 @@ from rest_framework import routers
 from pinyin import views
 
 router = routers.DefaultRouter()
-router.register(r'pinyind', views.UserInputView, 'pinyinannotation')
+router.register(r'pinyin', views.UserInputView, 'pinyinannotation')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
