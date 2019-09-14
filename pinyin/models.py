@@ -28,7 +28,7 @@ class UserInput(models.Model):
 
     class Meta:
         ordering = ['created']
-        db_table = 'User_Input'
+        db_table = 'user_input'
         indexes = [
             models.Index(fields=['created'], name='created_idx')
         ]
