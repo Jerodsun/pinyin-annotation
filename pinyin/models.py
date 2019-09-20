@@ -23,7 +23,7 @@ class PinyinCodes(models.Model):
 class UserInput(models.Model):
     """This field saves the user inputs."""
     created = models.DateTimeField(auto_now_add=True)
-    input_string = models.TextField(max_length=200)
+    input_string = models.TextField(max_length=2000)
     ip_address = models.CharField(max_length=15)
 
     class Meta:
