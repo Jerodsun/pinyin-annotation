@@ -28,11 +28,11 @@ class UserInputView(viewsets.ModelViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def list(self, request):
-        return Response({'message':'Please post a string < 200 chars.'})
+        return Response({'message':'Please post a string < 2000 chars.'})
 
     def retrieve(self, request, pk):
         # also temporarily block id selections
-        return Response({'message':'Please post a string < 200 chars.'})
+        return Response({'message':'Please post a string < 2000 chars.'})
 
     def get_client_ip(self, request):
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')

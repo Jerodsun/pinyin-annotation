@@ -5,7 +5,7 @@ from .models import UserInput
 class UserInputSerializer(serializers.ModelSerializer):
     """ Serialize the user input string. """
     id = serializers.IntegerField(read_only=True)
-    input_string = serializers.CharField(max_length=200)
+    input_string = serializers.CharField(max_length=2000)
 
     class Meta:
         model = UserInput
