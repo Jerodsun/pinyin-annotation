@@ -1,8 +1,10 @@
-INSERT INTO pinyin_pinyincodes 
-("character", pinyin1, number, pinyin2)
-SELECT "character", pinyin1, number, pinyin2 from pinyin_codes
-WHERE character not null;
+-- INSERT INTO pinyin_pinyincodes 
+-- ("character", pinyin1, number, pinyin2)
+-- SELECT "character", pinyin1, number, pinyin2 from pinyin_codes
+-- WHERE character not null;
 
+-- Use this command
+-- then paste below
 
 -- sqlite3 pinyin.sqlite3 
 
